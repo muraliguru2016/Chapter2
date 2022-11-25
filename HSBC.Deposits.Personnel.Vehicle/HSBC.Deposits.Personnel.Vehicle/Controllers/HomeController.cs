@@ -20,9 +20,10 @@ namespace HSBC.Deposits.Personnel.Vehicle.Controllers
         }
 
         [HttpPost, Route("save-employee")]
-        public string SaveEmployee(int empno, string empname)
+        public async Task<IActionResult> SaveEmployee(int empno, string empname)
         {
-            return "Welcome " + empname + ", Your employee number is " + empno.ToString();
+            return StatusCode(StatusCodes.Status200OK, 
+                "Welcome " + empname + ", Your employee number is " + empno.ToString());
         }
 
         [HttpPost, Route("post-consultant-data")]
