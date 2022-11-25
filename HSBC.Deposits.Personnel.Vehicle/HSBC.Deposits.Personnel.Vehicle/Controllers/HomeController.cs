@@ -13,10 +13,10 @@ namespace HSBC.Deposits.Personnel.Vehicle.Controllers
     public class HomeController : BaseController
     {
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IActionResult> Get()
         {
             List<string> arrNames = new List<string>() { "asfsf", "asdfdsf" };
-            return arrNames;
+            return StatusCode(StatusCodes.Status200OK, arrNames);
         }
 
         [HttpPost, Route("save-employee")]
