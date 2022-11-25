@@ -37,7 +37,7 @@ namespace HSBC.Deposits.Personnel.Vehicle.Controllers
 
         [HttpGet, Route("get-employee")]
         [SwaggerResponse(200, "Successful", typeof(EmployeeDTO))]
-        public EmployeeDTO GetEmployee(int empno)
+        public async Task<IActionResult> GetEmployee(int empno)
         {
             var objEmployee = new EmployeeDTO()
             {
@@ -45,7 +45,7 @@ namespace HSBC.Deposits.Personnel.Vehicle.Controllers
                 EmpName = "Murali",
                 Department = "Software Engineering"
             };
-            return objEmployee;
+            return StatusCode(StatusCodes.Status200OK, objEmployee);
         }
     }
 }
