@@ -29,8 +29,12 @@ git remote add origin https://github.com/muraliguru2016/chapter2.git
 git push origin master
 ============================================
 
-
-
+branch protection
+------------------
+settings -> branches -> branch protection rules -> provide branch name
+Require a pull request before merging
+Lock branch
+Do not allow bypassing the above settings
 
 
 
